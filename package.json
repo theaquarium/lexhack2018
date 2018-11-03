@@ -1,0 +1,16 @@
+{
+  "name": "lexhack2018",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/theaquarium/lexhack2018.git",
+  "author": "Peter Vashevko <pvashevko@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0"
+  }
+}

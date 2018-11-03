@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Methane",
+        "formula": "  H\nH C H\n  H"
+    },
+    {
+        "name": "Oxygen",
+        "formula": "O O"
+    },
+    {
+        "name": "Water",
+        "formula": "H O H"
+    },
+    {
+        "name": "Ozone",
+        "formula": "O O\n O"
+    },
+    {
+        "name": "Ammonia",
+        "formula": "H H\n N\n H"
+    },
+    {
+        "name": "Hydrogen Peroxide",
+        "formula": "H\n O O\n  H"
+    },
+    {
+        "name": "Butane",
+        "formula": "  H H H H\nH C C C C H\n  H H H H"
+    },
+    {
+        "name": "Carbon Dioxide",
+        "formula": "O C O"
+    },
+    {
+        "name": "Carbon Monoxide",
+        "formula": "C Os"
+    }
+]
