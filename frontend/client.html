@@ -5,15 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Play Molecules</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="client.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="resources/client.css" />
 </head>
 <body>
-    <div class="header"><div class="player">Player <span id="playerid"></span></div></div>
+    <div class="header"><div class="name">Player <span id="playerid"></span></div></div>
 
-    <div id="moleculedisplay"></div>
+    <div id="moleculedisplay" hidden></div>
+    <div id="waiting">Waiting For Host...</div>
+
+    <div class="atombox left">
+        <div class="atom-container"><img src="/images/Carbon.png" class="atom atom-carbon"></div>
+        <div class="atom-container"><img src="/images/Nitrogen.png" class="atom atom-nitrogen"></div>
+    </div>
+
+    <div class="atombox right">
+        <div class="atom-container"><img src="/images/Oxygen.png" class="atom atom-oxygen"></div>
+        <div class="atom-container"><img src="/images/Hydrogen.png" class="atom atom-hydrogen"></div>
+    </div>
 
     <script src="https://unpkg.com/socket.io-client@2.1.1/dist/socket.io.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.6/svg.min.js"></script>
-    <script src="client.js"></script>
+    <script src="resources/client.js"></script>
 </body>
 </html>

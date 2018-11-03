@@ -1,21 +1,40 @@
-const app = require('express')();
+const express = require('express');
+const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const molecules = require('./molecule.json');
 
 let players = {};
 const game = {
-    currentMolecule: {},
+    currentMolecule: undefined,
 };
+
+app.use('/resources', express.static('frontend/resources'));
+app.use('/images', express.static('images'));
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/frontend/index.html');
 });
 
+app.get('/play', function(req, res){
+    res.sendFile(__dirname + '/frontend/client.html');
+});
+
+app.get('/host', function(req, res){
+    res.sendFile(__dirname + '/frontend/host.html');
+});
+
 io.on('connection', function(socket) {
-    socket.on('start', function() {
-        game.currentMolecule = randomMolecule();
+    if (game.currentMolecule) {
+        console.log(game.currentMolecule);
         socket.emit('startmolecule', game.currentMolecule);
+    }
+
+    socket.on('start', function() {
+        socket.emit('setplayers', players);
+        game.currentMolecule = randomMolecule();
+        io.emit('startmolecule', game.currentMolecule);
+        console.log('starting game', game.currentMolecule);
     });
     socket.on('player-ready', function() {
         players[socket.id] = {
@@ -23,7 +42,15 @@ io.on('connection', function(socket) {
             score: 0
         };
         socket.emit('added-player', players[socket.id].id);
+        io.emit('setplayers', players);
+        console.log('player added:', players[socket.id]);
     });
+    socket.on('done', function() {
+        players[socket.id].score++;
+        game.currentMolecule = randomMolecule();
+        io.emit('startmolecule', game.currentMolecule);
+        io.emit('setplayers', players);
+    })
     socket.on('disconnect', function() {
         delete players[socket.id];
     });

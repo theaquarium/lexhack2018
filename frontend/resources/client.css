@@ -1,0 +1,82 @@
+@import url('https://rsms.me/inter/inter-ui.css');
+
+body {
+    font-family: 'Inter UI', sans-serif;
+    background: #4f4f4f;
+    margin: 0;
+    height: 100vh;
+}
+
+.header {
+    top: 0;
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    background: #5b5b5b;
+}
+
+.name {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: fit-content;
+    height: fit-content;
+    color: #efefef;
+    font-weight: 500;
+    font-size: 5vh;
+}
+
+#moleculedisplay {
+    position: absolute;
+    top: 10vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50vw;
+    height: 90vh;
+    margin: auto;
+
+
+    display: grid;
+}
+
+#waiting {
+    color: #efefef;
+    font-weight: 500;
+    font-size: 10vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 70vw;
+    height: fit-content;
+    margin: auto;
+    text-align: center;
+}
+
+.atombox {
+    display: flex;
+    flex-direction: column;
+    width: 18vw;
+    height: 90vh;
+    position: absolute;
+    justify-content: space-evenly;
+    margin: 0 2.5vw;
+    text-align: center;
+}
+
+.atom {
+    border-radius: 50%;
+}
+
+.atom.active {
+    box-shadow: 2px 2px 0px 0.5px rgba(255, 255, 255, 0.7);
+}
+
+.left {
+    left: 0;
+}
+.right {
+    right: 0;
+}
