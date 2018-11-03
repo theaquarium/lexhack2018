@@ -11,6 +11,7 @@ const game = {
 
 app.use('/resources', express.static('frontend/resources'));
 app.use('/images', express.static('images'));
+app.use('/sound', express.static('sound'));
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/frontend/index.html');

@@ -12,6 +12,27 @@ for (let i = 0; i < atoms.length; i++) {
     atoms[i].height = document.body.clientWidth / 7.5;
 }
 
+const soundHit = document.createElement("audio");
+soundHit.src = "sound/hit.mp3";
+soundHit.setAttribute("preload", "auto");
+soundHit.setAttribute("controls", "none");
+soundHit.style.display = "none";
+document.body.appendChild(soundHit);
+
+const soundPoint = document.createElement("audio");
+soundPoint.src = "sound/point.mp3";
+soundPoint.setAttribute("preload", "auto");
+soundPoint.setAttribute("controls", "none");
+soundPoint.style.display = "none";
+document.body.appendChild(soundPoint);
+
+const soundWrong = document.createElement("audio");
+soundWrong.src = "sound/wrong.mp3";
+soundWrong.setAttribute("preload", "auto");
+soundWrong.setAttribute("controls", "none");
+soundWrong.style.display = "none";
+document.body.appendChild(soundWrong);
+
 document.getElementById('submit-button').addEventListener('click', function(event) {
     const name = document.getElementById('username').value;
     if (name != "") {
@@ -28,6 +49,8 @@ document.getElementById('submit-button').addEventListener('click', function(even
         document.getElementById('moleculedisplay').style.display = "grid";
 
         socket.on('playerpoint', function(playerid) {
+            soundPoint.currentTime = 0;
+            soundPoint.play();
             document.getElementById('moleculedisplay').style.display = "none";
             document.getElementById('rightbox').style.display = "none";
             document.getElementById('leftbox').style.display = "none";
@@ -101,6 +124,12 @@ document.getElementById('submit-button').addEventListener('click', function(even
                 const atomtype = event.target.className.slice(13);
                 if (atomtype === activeAtom) {
                     event.target.src = "/images/" + atomtype + ".png";
+                    soundHit.currentTime = 0;
+                    soundHit.play();
+                }
+                else {
+                    soundWrong.currentTime = 0;
+                    soundWrong.play();
                 }
         
                 let incorrect = false;
