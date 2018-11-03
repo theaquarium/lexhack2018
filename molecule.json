@@ -34,5 +34,69 @@
     {
         "name": "Carbon Monoxide",
         "formula": "CO"
+    },
+    {
+      "name": "Ethylene",
+      "formula": "HH\nCC\nHH"
+    },
+    {
+      "name": "Methanol",
+      "formula": "H \nHCOH\nH "
+    }
+    {
+      "name": "Ethanol",
+      "formula": "HH\nHCCOH\nHH"
+    },
+    {
+      "name": "Nitric Acid",
+      "formula": "O \nONOH"
+    }
+    {
+      "name": "Nitric Oxide",
+      "formula": "NO"
+    },
+    {
+      "name": "Nitrogen Dioxide",
+      "formula": "O \nNO"
+    },
+    {
+      "name": "Hydrogen",
+      "formula": "HH"
+    },
+    {
+      "name": "Nitrogen",
+      "formula": "NN"
+    },
+    {
+      "name": "Hydrogen Cyonide",
+      "formula": "HCN"
+    },
+    {
+      "name": "Dicorbonate",
+      "formula": "OO\nCC\nOOO"
+    },
+    {
+      "name": "Propene",
+      "formula": "H H \nCCCH\nHHH "
+    },
+    {
+      "name": "Cyanide",
+      "formula": "CN"
+    },
+    {
+      "name": "Formaldehyde",
+      "formula": "H  \n CO\nH  "
+    },
+    {
+      "name": "Dinitrogen Monoxide",
+      "formula": "OO\nNN\nOO"
+    },
+    {
+      "name": "Benzene",
+      "formula": " H  H \n  CC  \nHC  CH\n  CC  \n H  H "
+    },
+    {
+      "name": "Acetaldehyde",
+      "formula": " HO \nHCCH\n H  "
     }
 ]
