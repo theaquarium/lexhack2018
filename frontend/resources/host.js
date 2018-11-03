@@ -11,7 +11,7 @@ socket.on('setplayers', function (players) {
     playerBox.innerHTML = "";
     Object.values(players).forEach(player => {
         const scorebox = document.createElement("span");
-        scorebox.innerHTML = "<strong>Player " + player.id + "</strong><br>" + player.score;
+        scorebox.innerHTML = "<strong>" + player.name + "</strong><br>" + player.score;
         scorebox.className = "score";
         playerBox.appendChild(scorebox);
     });

@@ -25,32 +25,36 @@ app.get('/host', function(req, res){
 });
 
 io.on('connection', function(socket) {
-    if (game.currentMolecule) {
-        console.log(game.currentMolecule);
-        socket.emit('startmolecule', game.currentMolecule);
-    }
-
     socket.on('start', function() {
         socket.emit('setplayers', players);
         game.currentMolecule = randomMolecule();
         io.emit('startmolecule', game.currentMolecule);
         console.log('starting game', game.currentMolecule);
     });
-    socket.on('player-ready', function() {
+    socket.on('player-ready', function(name) {
         players[socket.id] = {
             id: Object.keys(players).length + 1,
+            name: name,
             score: 0
         };
-        socket.emit('added-player', players[socket.id].id);
+        socket.emit('added-player', players[socket.id].name);
+        if (game.currentMolecule) {
+            console.log(game.currentMolecule);
+            socket.emit('startmolecule', game.currentMolecule);
+        }
         io.emit('setplayers', players);
-        console.log('player added:', players[socket.id]);
+        console.log('player added:', players[socket.id].name);
     });
     socket.on('done', function() {
         players[socket.id].score++;
-        game.currentMolecule = randomMolecule();
-        io.emit('startmolecule', game.currentMolecule);
         io.emit('setplayers', players);
-    })
+        io.emit('playerpoint', players[socket.id].name);
+        setTimeout(function() {
+            game.currentMolecule = randomMolecule();
+            io.emit('startmolecule', game.currentMolecule);
+        }, 1000);
+    });
+
     socket.on('disconnect', function() {
         delete players[socket.id];
     });

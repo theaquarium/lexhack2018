@@ -8,17 +8,19 @@
     <link rel="stylesheet" type="text/css" media="screen" href="resources/client.css" />
 </head>
 <body>
-    <div class="header"><div class="name">Player <span id="playerid"></span></div></div>
+    <div class="header"><div id="name">Player</div></div>
 
-    <div id="moleculedisplay" hidden></div>
+    <div id="moleculedisplay"></div>
     <div id="waiting">Waiting For Host...</div>
+    <div id="point-notifier"></div>
+    <div id="usernameinput"><input id="username" type="text" name="username" placeholder="Name"><div id="submit-button">Start</div></div>
 
-    <div class="atombox left">
+    <div class="atombox left" id="leftbox">
         <div class="atom-container"><img src="/images/Carbon.png" class="atom atom-carbon"></div>
         <div class="atom-container"><img src="/images/Nitrogen.png" class="atom atom-nitrogen"></div>
     </div>
 
-    <div class="atombox right">
+    <div class="atombox right" id="rightbox">
         <div class="atom-container"><img src="/images/Oxygen.png" class="atom atom-oxygen"></div>
         <div class="atom-container"><img src="/images/Hydrogen.png" class="atom atom-hydrogen"></div>
     </div>

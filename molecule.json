@@ -42,7 +42,7 @@
     {
       "name": "Methanol",
       "formula": "H \nHCOH\nH "
-    }
+    },
     {
       "name": "Ethanol",
       "formula": "HH\nHCCOH\nHH"
@@ -50,7 +50,7 @@
     {
       "name": "Nitric Acid",
       "formula": "O \nONOH"
-    }
+    },
     {
       "name": "Nitric Oxide",
       "formula": "NO"
@@ -85,7 +85,7 @@
     },
     {
       "name": "Formaldehyde",
-      "formula": "H  \n CO\nH  "
+      "formula": "H  \n CO\nH"
     },
     {
       "name": "Dinitrogen Monoxide",

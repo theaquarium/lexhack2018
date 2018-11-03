@@ -15,7 +15,7 @@ body {
     background: #5b5b5b;
 }
 
-.name {
+#name {
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
@@ -55,6 +55,21 @@ body {
     text-align: center;
 }
 
+#point-notifier {
+    color: #efefef;
+    font-weight: 500;
+    font-size: 10vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 70vw;
+    height: fit-content;
+    margin: auto;
+    text-align: center;
+}
+
 .atombox {
     display: flex;
     flex-direction: column;
@@ -79,4 +94,40 @@ body {
 }
 .right {
     right: 0;
+}
+
+#usernameinput {
+    font-size: 5vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 25vh;
+    width: 50vw;
+}
+
+input {
+    height: 10vh;
+    width: 50vw;
+    background: #9b9b9b;
+    box-shadow: none;
+    border: 1px solid white;
+    margin-bottom: 2.5vh;
+    font-size: 5vh;
+    padding: 1vw;
+}
+
+#submit-button {
+    width: fit-content;
+    height: fit-content;
+    padding: 2.5vh 4vw;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: #9b9b9b;
+    color: #efefef;
+    cursor: pointer;
 }
