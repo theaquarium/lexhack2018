@@ -47,7 +47,8 @@ io.on('connection', function(socket) {
         console.log('player added:', players[socket.id].name);
     });
     socket.on('done', function() {
-        players[socket.id].score++;
+        const player = players[socket.id];
+        player.score++;
         io.emit('setplayers', players);
         io.emit('playerpoint', players[socket.id].name);
         setTimeout(function() {
