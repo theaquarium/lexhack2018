@@ -1,4 +1,4 @@
-const socket = io('http://10.61.25.113:8097/');
+const socket = io();
 
 socket.on('startmolecule', function(molecule) {
     document.getElementById('moleculename').innerHTML = molecule.name;

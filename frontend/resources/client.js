@@ -4,7 +4,7 @@ document.getElementById('leftbox').style.display = "none";
 document.getElementById('point-notifier').style.display = "none";
 document.getElementById('waiting').style.display = "none";
 
-const socket = io('http://10.61.25.113:8097/');
+const socket = io();
 
 const atoms = document.getElementsByClassName('atom');
 for (let i = 0; i < atoms.length; i++) {
